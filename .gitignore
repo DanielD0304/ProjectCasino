@@ -28,6 +28,7 @@ MANIFEST
 
 # Virtual environment
 venv/
+.venv/
 
 # Django stuff:
 *.log
