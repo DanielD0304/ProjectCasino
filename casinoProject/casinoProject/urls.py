@@ -20,5 +20,5 @@ from databaseApi import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('my-view/', views.my_view, name='my_view'),
+    path('', views.my_view, name='my_view'),
 ]

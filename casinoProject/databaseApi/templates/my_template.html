@@ -6,9 +6,13 @@
 <body>
     <h1>Data from Supabase</h1>
     <ul>
-        {% for item in data %}
-            <li>{{ item }}</li>
-        {% endfor %}
+        {% if data %}
+            {% for item in data %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        {% else %}
+            <li>No data available</li>
+        {% endif %}
     </ul>
 </body>
 </html>
