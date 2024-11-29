@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .supabase_client import fetch_data_from_table
 
-# Create your views here.
-def my_view(request):
+def data_view(request):
     data = fetch_data_from_table("Games")
-    return render(request, "my_template.html", {"data": data})
+    return render(request, 'testing.html', {'data': data})
+
+# Create your views here.
