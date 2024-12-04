@@ -9,6 +9,12 @@ class roulettePlayer:
 
     def get_balance(self):
         return self.playerBalance
+    
+    def get_name(self):
+        return self.playerName
+    
+    def get_id(self):
+        return self.playerID
 
     def add_balance(self, amount: int):
         if amount < 0:
@@ -23,9 +29,3 @@ class roulettePlayer:
         elif self.playerBalance < amount:
             raise ValueError("Not enough balance")
         self.playerBalance -= amount
-
-    #Je nachdem ob wir bets in gamelogic implementieren wollen oder hier
-    def place_bet(self, amount: int, bet_type: str):
-        self.subtract_balance(amount)
-        return {"amount": amount, "bet_type": bet_type}
-
