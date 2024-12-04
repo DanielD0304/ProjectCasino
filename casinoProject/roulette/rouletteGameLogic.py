@@ -21,4 +21,5 @@ class rouletteGameLogic:
         self.bets.append(rouletteBet(playerName, betType, betValue))
 
     def calculatePayout(self, result: Result):
-        roulettePayoutCalculator = roulettePayoutCalculator()
+        roulettePayoutCalculator = roulettePayoutCalculator(self, result, self.bets)
+        return self.roulettePayoutCalculator.calculatePayout()
