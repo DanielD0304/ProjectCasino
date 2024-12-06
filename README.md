@@ -11,5 +11,6 @@ install Django % pip install django %
 check if installed % django-admin --version %
 install supabase % pip install supabase %
 instal dotnev % pip install python-dotenv %
+cd casinoProject
 % python manage.py migrate %
 run server % python manage.py runserver %
