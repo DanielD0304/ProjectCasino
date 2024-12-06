@@ -14,3 +14,10 @@ instal dotnev % pip install python-dotenv %
 cd casinoProject
 % python manage.py migrate %
 run server % python manage.py runserver %
+
+# start guide
+virtual Environment starten % .\venv\Scripts\activate %
+
+cd casinoProject
+
+run server % python manage.py runserver %

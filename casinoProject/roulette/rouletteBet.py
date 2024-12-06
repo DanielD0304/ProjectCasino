@@ -1,7 +1,7 @@
 class RouletteBet:
-    def __init__(self, player_id, winning_numbers, amount):
+    def __init__(self, player_id, betting_numbers, amount):
         self.player_id = player_id
-        self.winning_numbers = set(winning_numbers)
+        self.betting_numbers = set(betting_numbers)
         self.amount = amount
 
     def __repr__(self):
