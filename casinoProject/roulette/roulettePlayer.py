@@ -2,7 +2,7 @@
 class roulettePlayer:
 
 
-    def __init__(self, playerName: str, playerBalance: int, playerID: int):
+    def __init__(self, playerName: str, playerBalance: int, playerID: str):
         self.playerName = playerName
         self.playerBalance = playerBalance
         self.playerID = playerID
@@ -28,4 +28,5 @@ class roulettePlayer:
             raise ValueError("Amount to subtract should be positive")
         elif self.playerBalance < amount:
             raise ValueError("Not enough balance")
-        self.playerBalance -= amount
+        else:
+            self.playerBalance -= amount
