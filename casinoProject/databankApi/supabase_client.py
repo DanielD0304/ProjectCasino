@@ -18,6 +18,14 @@ def fetch_data_from_table(table_name: str):
     response =  supabase_client.table(table_name).select("*").execute()
     return response.data
 
+def insert_data_into_table(table_name: str, data: dict):
+    response = supabase_client.table(table_name).insert(data).execute()
+    if response.error:
+        print(f"Error inserting data into table: {response.error}")
+        return None
+    return response.data
+
+#Test connection
 def test_connection():
     try:
         response = supabase_client.table("Games").select("*").execute()
@@ -29,5 +37,5 @@ def test_connection():
             print("Connection failed")
     except Exception as e:
         print("Exception: ", e)
-
-test_connection()        
+#uncomment to test connection
+#test_connection()        
