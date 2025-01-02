@@ -1,64 +1,50 @@
 .roulette-table {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: green;
-    padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-  }
-  
-  .number-grid {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    gap: 5px;
-  }
-  
-  .zero-cell {
-    grid-row: span 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .number-rows {
-    display: grid;
-    grid-template-columns: repeat(12, 50px);
-    gap: 5px;
-  }
-  
-  .bet-cell {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .bet-cell.red {
-    background-color: #e74c3c;
-    color: white;
-  }
-  
-  .bet-cell.black {
-    background-color: #2c3e50;
-    color: white;
-  }
-  
-  .bet-cell.green {
-    background-color: #27ae60;
-    color: white;
-  }
-  
-  .bet-options {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: green;
+  border: 5px solid black;
+  border-radius: 10px;
+}
+
+.number-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 50px);
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.number-cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.bet-fields {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 10px;
+}
+
+.bet-field {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bet-field:hover {
+  background-color: lightgray;
+}
