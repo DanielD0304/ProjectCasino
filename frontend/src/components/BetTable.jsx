@@ -1,40 +1,52 @@
 import React from 'react';
-import './betTable.css'; // Create a CSS file for styling
+import './betTable.css';
 
 const BetTable = () => {
-  // Define the numbers and their colors
-  const rouletteNumbers = [
-    { number: 0, color: 'green' },
-    ...Array.from({ length: 36 }, (_, i) => ({
-      number: i + 1,
-      color: (i + 1 <= 10 || (i + 1 > 18 && i + 1 <= 28)) ? (i % 2 === 0 ? 'black' : 'red') : (i % 2 === 0 ? 'red' : 'black')
-    }))
-  ];
+  const getColor = (number) => {
+    return number % 2 === 0 ? 'black' : 'red';
+  };
+
+  const numbers = Array.from({ length: 36 }, (_, index) => index + 1);
 
   return (
-    <div className="roulette-table">
-      <div className="number-grid">
-        {rouletteNumbers.map(({ number, color }) => (
-          <div 
-            key={number} 
-            className="number-cell" 
-            style={{ backgroundColor: color }}
-          >
-            {number}
-          </div>
-        ))}
-      </div>
-      <div className="bet-fields">
-        <div className="bet-field" data-bet="even">Even</div>
-        <div className="bet-field" data-bet="odd">Odd</div>
-        <div className="bet-field" data-bet="red">Red</div>
-        <div className="bet-field" data-bet="black">Black</div>
-        <div className="bet-field" data-bet="1to18">1 to 18</div>
-        <div className="bet-field" data-bet="19to36">19 to 36</div>
-        <div className="bet-field" data-bet="1st12">1st 12</div>
-        <div className="bet-field" data-bet="2nd12">2nd 12</div>
-        <div className="bet-field" data-bet="3rd12">3rd 12</div>
-      </div>
+    <div className="table-container">
+      <table className="table">
+        <tbody>
+          {Array.from({ length: 3 }).map((_, rowIndex) => (
+            <tr key={rowIndex}>
+              {Array.from({ length: 12 }).map((_, colIndex) => {
+                const number = numbers[colIndex * 3 + rowIndex];
+                return (
+                  <td key={colIndex} className={getColor(number)}>
+                    {number}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <table className="table">
+        <tbody>
+          <tr>
+            <td>1st 12</td>
+            <td>2nd 12</td>
+            <td>3rd 12</td>
+          </tr>
+        </tbody>
+      </table>
+      <table className="table">
+        <tbody>
+          <tr>
+            <td className="transparent">1 - 18</td>
+            <td className="transparent">EVEN</td>
+            <td className="karoRed">♦</td>
+            <td className="karoBlack">♦</td>
+            <td className="transparent">ODD</td>
+            <td className="transparent">19 - 36</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };
